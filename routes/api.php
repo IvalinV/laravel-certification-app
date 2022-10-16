@@ -18,6 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test/response', function(){
-    return response()->json(['testing' => 'Laravel', 'some' => 'test']);
+Route::get('/test/response', function () {
+    return response()->json([
+        [ 'name' => 'Finish project', 'complete' => false, 'id' => 1, 'tag' => "math" ],
+        [ 'name' => 'Read Chapter 4', 'complete' => false, 'id' => 2, 'tag' => "science" ],
+        [ 'name' => 'Turn in Homework', 'complete' => false, 'id' => 3, 'tag' => "math" ],
+        [ 'name' => 'Finish Laracasts video', 'complete' => true, 'id' => 4, 'tag' => "programing"],
+
+    ]);
 });

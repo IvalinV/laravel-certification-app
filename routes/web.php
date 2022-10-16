@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Facades\App\MarkdownConverter;
+use Illuminate\Mail\Markdown;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +24,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::get('test', function (Request $request) {
+    return view('vue-3');
+})->name('test');
+
 
 require __DIR__.'/auth.php';
